@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang=pt-br>
+<head>
+  <meta charset="utf-8">
+  <title>Questão 1</title>
+  <script>
+  function controladora(){
+
+    let a1 = Number(document.getElementById("a1").value);
+    let q = Number(document.getElementById("q").value);
+    let n = Number(document.getElementById("n").value);
+
+
+    let resultado_an = nesimoTermo(a1, q, n);
+    let resultado_sn = somaNTermos(a1, q, n);
+
+    document.getElementById("an").innerHTML = resultado_an;
+    document.getElementById("sn").innerHTML = resultado_sn;
+
+  }
+  function nesimoTermo(a1 , q, n){
+
+    let an = (a1)*(Math.pow(q,(n-1)));
+    return an;
+
+  }
+
+  function somaNTermos(a1, q, n){
+    let sn = (a1*(Math.pow(q,n)-1)/(q-1));
+    return sn;
+  }
+
+  </script>
+</head>
+<body>
+  <h1>Cálculo da Progressão Geométrica:</h1>
+  <main>
+    <div class="entrada_usuario">
+      <label for="a1"><strong>Entre com o valor de "a1":</strong></label>
+      <input type="text" id="a1">
+      <br>
+      <br>
+      <label for="q"><strong>Entre com o valor do quociente:</strong></label>
+      <input type="text" id="q">
+      <br>
+      <br>
+      <label for="n"><strong>Nésima posição:</strong></label>
+      <input type="text" id="n">
+    </div>
+    <br>
+    <button type="button" onclick="controladora()">Calcular</button>
+    <div class="Resultado">
+      <h4>An =  </h4><p id="an"></p>
+      <h4>Sn =  </h4><p id="sn"></p>
+    </div>
+  </main>
+</body>
+</html>
